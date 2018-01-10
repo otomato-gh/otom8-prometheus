@@ -12,3 +12,7 @@ services:
      - 9093:9093
   node:
     build: ./node_exporter
+  grafana:
+    image: grafana/grafana
+    ports:
+     - 3000:3000
