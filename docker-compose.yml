@@ -6,8 +6,12 @@ services:
      - 9090:9090 
     volumes:
      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+     - "./rules.yaml:/etc/prometheus/rules.yaml"
   alertmanager:
     image: prom/alertmanager:latest
+    command: "--config.file=/alertmanager.yaml --web.external-url=http://158.177.121.27:9093"
+    volumes:
+      - "./alertmanager.yaml:/alertmanager.yaml"  
     ports:
      - 9093:9093
   node:

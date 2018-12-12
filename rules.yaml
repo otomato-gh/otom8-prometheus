@@ -1,0 +1,11 @@
+groups:
+  - name: node
+    rules:
+    - alert: HighLoad
+      expr: node_load1{job="node"} > 0.5
+      for: 1m
+      labels:
+        severity: page
+      annotations:
+        summary: "High load for the last minute on {{ $labels.instance }}"
+   
