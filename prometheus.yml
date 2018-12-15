@@ -34,4 +34,4 @@ scrape_configs:
     # scheme defaults to 'http'.
     scrape_interval: "15s"
     static_configs:
-      - targets: ['158.177.121.27:9100']
+      - targets: ['node:9100']
