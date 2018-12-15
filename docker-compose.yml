@@ -20,3 +20,10 @@ services:
     image: grafana/grafana
     ports:
      - 3000:3000
+  mongo:
+    image: mongo
+  app:
+    build: ./app
+    ports:
+     - 5000:5000
+     - 8000:8000
