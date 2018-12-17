@@ -7,6 +7,23 @@ from prometheus_client import start_http_server
 app = Eve()
 app.register_blueprint(swagger)
 
+def pre_users_get_callback(request, lookup):
+     print('A GET request on the users endpoint has just been received!')
+def pre_users_post_callback(request):
+    print('A POST request on the users endpoint has just been received')
+
+app.on_pre_GET_users += pre_users_get_callback
+app.on_pre_POST_users += pre_users_post_callback
+
+def post_users_get_callback(request, payload):
+    print('A GET request on the users endpoint has just been performed!')
+         
+def post_users_post_callback(request, payload):
+    print('A POST request on the users endpoint has just been performed')
+                     
+app.on_post_GET_users += post_users_get_callback
+app.on_post_POST_users += post_users_post_callback
+
 # required. See http://swagger.io/specification/#infoObject for details.
 app.config['SWAGGER_INFO'] = {
     'title': 'Otomato User API',
@@ -22,6 +39,10 @@ app.config['SWAGGER_INFO'] = {
         'url': 'https://github.com/otomato-gh/otom8-prometheus/blob/master/LICENSE',
     }
 }
+
+@app.route('/hello')
+def hello():
+    return "Hello Prometheus!!!"
 
 @app.route('/healthz')
 def healthz():
