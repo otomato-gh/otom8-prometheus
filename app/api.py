@@ -19,7 +19,7 @@ app.config['SWAGGER_INFO'] = {
     },
     'license': {
         'name': 'GPL',
-        'url': 'https://github.com/otomato-gh/ornithology/blob/master/LICENSE',
+        'url': 'https://github.com/otomato-gh/otom8-prometheus/blob/master/LICENSE',
     }
 }
 
