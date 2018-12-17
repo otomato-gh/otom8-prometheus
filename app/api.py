@@ -25,7 +25,7 @@ app.config['SWAGGER_INFO'] = {
 
 @app.route('/healthz')
 def healthz():
-    return 'Healthy'
+    return 'Healthy as a bull'
 
 @app.route('/version')
 def version():

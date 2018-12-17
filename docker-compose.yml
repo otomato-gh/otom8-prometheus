@@ -27,3 +27,5 @@ services:
     ports:
      - 5000:5000
      - 8000:8000
+    volumes:
+      - "./app:/usr/src/app/"
