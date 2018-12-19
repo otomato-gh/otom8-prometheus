@@ -15,5 +15,5 @@ Yes I know, I should align the branch naming.
 The plan is to gradually transfer the PDF contents to this README.
 
 
-
+For more DevOps technical training please visit: https://devopstrain.pro
 
