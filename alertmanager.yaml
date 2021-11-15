@@ -1,5 +1,5 @@
 global:
-  slack_api_url: "https://hooks.slack.com/services/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"
+  slack_api_url: "https://hooks.slack.com/services/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"
 route:
   # The labels by which incoming alerts are grouped together. For example,
   # multiple alerts coming in for cluster=A and alertname=LatencyHigh would
