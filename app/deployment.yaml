@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: instrumented
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: instrumented
+  template:
+    metadata:
+      labels:
+        app: instrumented
+    spec:
+      containers:
+      - name: instrumented
+        image: otomato/instrumented
+        ports:
+        - name: web
+          containerPort: 5000
+        - name: metrics
+          containerPort: 8000

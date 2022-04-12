@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: instrumented
+  labels:
+    app: instrumented
+spec:
+  selector:
+    app: instrumented
+  ports:
+  - name: web
+    port: 5000
+  - name: metrics
+    port: 8000

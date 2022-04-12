@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: instrumented
+  labels:
+    team: otomato
+spec:
+  selector:
+    matchLabels:
+      app: instrumented
+  namespaceSelector:
+    any: true
+  endpoints:
+  - port: metrics
